@@ -274,7 +274,7 @@ void UpdateStats(int client)
 
 public void Shavit_Bhopstats_OnLeaveGround(int client, bool jumped, bool ladder)
 {
-	if (!jumped || ladder)
+	if (ladder)
 	{
 		return;
 	}

@@ -1596,7 +1596,7 @@ void ChangeClientStyle(int client, int style, bool manual)
 // used as an alternative for games where player_jump isn't a thing, such as TF2
 public void Shavit_Bhopstats_OnLeaveGround(int client, bool jumped, bool ladder)
 {
-	if(gB_HookedJump || !jumped || ladder)
+	if(gB_HookedJump || ladder)
 	{
 		return;
 	}
