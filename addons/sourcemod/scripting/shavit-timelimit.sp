@@ -141,7 +141,7 @@ public void OnMapStart()
 
 public void OnConVarChanged(ConVar convar, const char[] oldValue, const char[] newValue)
 {
-	if(view_as<bool>(StringToInt(newValue)) && gEV_Type != Engine_TF2)
+	if(view_as<bool>(StringToInt(newValue)))
 	{
 		delete gH_Timer;
 		gH_Timer = CreateTimer(1.0, Timer_PrintToChat, 0, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
@@ -203,7 +203,7 @@ public void OnConfigsExecuted()
 		SetLimit(RoundToNearest(gCV_DefaultLimit.FloatValue));
 	}
 
-	if(gCV_ForceMapEnd.BoolValue && gH_Timer == null && gEV_Type != Engine_TF2)
+	if(gCV_ForceMapEnd.BoolValue && gH_Timer == null)
 	{
 		gH_Timer = CreateTimer(1.0, Timer_PrintToChat, 0, TIMER_REPEAT);
 	}
